@@ -4,6 +4,8 @@ import Info from "@/components/Info";
 import ProductList from "@/components/ProductList";
 import Gallery from "@/components/gallery";
 import Container from "@/components/ui/container";
+import type { Metadata } from "next";
+import type { GetServerSideProps, NextPage } from "next";
 
 interface ProductPageProps {
   params: {
