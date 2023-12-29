@@ -6,10 +6,24 @@ import Gallery from "@/components/gallery";
 import Container from "@/components/ui/container";
 import type { Metadata } from "next";
 import type { GetServerSideProps, NextPage } from "next";
+import { title } from "process";
 
 interface ProductPageProps {
   params: {
     productId: string;
+  };
+}
+
+export async function generateMetadata({
+  params,
+}: {
+  params: { productId: string };
+}) {
+  const product = await getProduct(params.productId);
+
+  return {
+    title: product.name,
+    description: product.name,
   };
 }
 
